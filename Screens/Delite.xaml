@@ -1,0 +1,109 @@
+﻿<Page x:Class="SystemBased.Screens.Delite"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SystemBased.Screens"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Delite">
+    
+    <Page.Resources>
+        <Style x:Key="RoundedBorder" TargetType="Border">
+            <Setter Property="Background" Value="#FF7E16A7"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="MinWidth" Value="40"/>
+        </Style>
+    </Page.Resources>
+    
+    <Grid Background="White" Cursor="">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Border Style="{StaticResource RoundedBorder}"
+                 Background="Black" VerticalAlignment="Center"
+                        Margin="10,10,2,2">
+                    <Border Style="{StaticResource RoundedBorder}" 
+                     Background="White"
+                     Padding="5">
+                        <TextBox x:Name="KeyBox" 
+                          HorizontalAlignment="Center" 
+                          TextWrapping="Wrap" 
+                          Text="*Ключ" 
+                          VerticalAlignment="Center" 
+                          Width="140" 
+                          BorderBrush="White"/>
+                    </Border>
+                </Border>
+                <Border Style="{StaticResource RoundedBorder}"
+                        Background="Black" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Top"
+                        Margin="10,10,2,2">
+                    <Border Style="{StaticResource RoundedBorder}" 
+                            Background="#FF07C1FF"
+                            Padding="5" 
+                            Cursor="Hand">
+                        <Button HorizontalAlignment="Center"
+                                Content="Выбрать"
+                                VerticalAlignment="Center" 
+                                Background="#FF07C1FF" 
+                                BorderBrush="#FF07C1FF" Click="Button_Click"/>
+                    </Border>
+                </Border>
+            </StackPanel>
+            <ComboBox x:Name="MyComboBox" 
+                  Width="150" 
+                  Margin="10" 
+                  BorderBrush="White"
+                  Text="Таблицы" HorizontalAlignment="Left" 
+                      VerticalAlignment="Top" 
+                      Cursor="Hand" 
+                      SelectionChanged="MyComboBox_SelectionChanged">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="White" 
+                                      Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Content="Сотрудники"/>
+                <ComboBoxItem Content="Должности"/>
+            </ComboBox>
+        </StackPanel>
+        <Border Style="{StaticResource RoundedBorder}"
+        Background="Black" 
+        HorizontalAlignment="Right" 
+        VerticalAlignment="Bottom"
+        Margin="10">
+            <Border Style="{StaticResource RoundedBorder}" 
+                Background="#FFFF0707"
+                Padding="5" Cursor="Hand"
+            >
+                <Button HorizontalAlignment="Center"
+                Content="Удалить"
+                VerticalAlignment="Center" 
+                Background="#FFFF0707" 
+                BorderBrush="#FFFF0707" Click="Button_Click_1"/>
+            </Border>
+        </Border>
+        <Border Style="{StaticResource RoundedBorder}"
+                Background="Black" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Margin="10">
+            <Border Style="{StaticResource RoundedBorder}" 
+                Background="White">
+                <TextBlock x:Name="DataBox" VerticalAlignment="Center" 
+                           HorizontalAlignment="Center"
+                           MinHeight="30"
+                           MinWidth="90"
+                           Text="Данные для удаления" 
+                           Margin="5,7,5,5"/>
+            </Border>
+        </Border>
+        
+    </Grid>
+</Page>
